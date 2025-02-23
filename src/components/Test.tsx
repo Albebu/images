@@ -14,9 +14,7 @@ const questions = [
 ];
 
 const Test = () => {
-  const [selectedAnswers, setSelectedAnswers] = useState<string[]>(
-    Array(questions.length).fill("")
-  );
+  const [selectedAnswers, setSelectedAnswers] = useState<string[]>(Array(questions.length).fill(""));
 
   const handleSelect = (index: number, option: string) => {
     const newAnswers = [...selectedAnswers];
@@ -25,9 +23,7 @@ const Test = () => {
   };
 
   const checkAnswers = () => {
-    const correct = selectedAnswers.filter(
-      (ans, i) => ans === questions[i].answer
-    ).length;
+    const correct = selectedAnswers.filter((ans, i) => ans === questions[i].answer).length;
     alert(`Has respondido correctamente ${correct} de ${questions.length}`);
   };
 
@@ -41,9 +37,7 @@ const Test = () => {
             <button
               key={opt}
               className={`mr-2 px-4 py-2 mt-2 rounded ${
-                selectedAnswers[i] === opt
-                  ? "bg-blue-500 text-white"
-                  : "bg-gray-300"
+                selectedAnswers[i] === opt ? "bg-blue-500 text-white" : "bg-gray-300"
               }`}
               onClick={() => handleSelect(i, opt)}
             >
@@ -52,10 +46,7 @@ const Test = () => {
           ))}
         </div>
       ))}
-      <button
-        onClick={checkAnswers}
-        className="bg-green-500 text-white px-6 py-2 mt-4 rounded"
-      >
+      <button onClick={checkAnswers} className="bg-green-500 text-white px-6 py-2 mt-4 rounded">
         Verificar respuestas
       </button>
     </div>

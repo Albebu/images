@@ -49,7 +49,7 @@ const TestEjercicio1 = () => {
 
   return (
     <div className="p-6">
-      <h2 className="text-2xl font-bold mb-4">
+      <h2 className="text-2xl font-bold mb-4 gap-4">
         Test de Conocimientos sobre Formatos de Imagen
       </h2>
       {questions.map((q, i) => (
